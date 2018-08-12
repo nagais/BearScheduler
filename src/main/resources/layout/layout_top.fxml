@@ -11,7 +11,9 @@
             fx:controller="TopController"
             prefHeight="400.0" prefWidth="600.0">
 
-    <Label text="Hello world" />
-
+    <VBox>
+        <Label id="appName"
+               text="Bear Scheduler"/>
+    </VBox>
 
 </AnchorPane>

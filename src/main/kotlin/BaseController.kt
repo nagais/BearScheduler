@@ -4,8 +4,9 @@ import javafx.stage.Stage
 import util.AppResource
 
 abstract class BaseController : Application() {
-    protected val resource = AppResource.getResourceObject()
+    private val resource = AppResource.getResourceObject()
     private lateinit var stage: Stage
+    private var css: String = ""
 
     companion object {
         const val APP_TITLE = "BearTree"
@@ -19,16 +20,30 @@ abstract class BaseController : Application() {
         }
         primaryStage.show()
 
-        onSetUpView()
+        onSetUpView(this.resource)
+        setScene(this, stage.scene)
     }
 
-    fun setScene(layout: AppResource.Layout) {
-        stage.apply {
-            scene = Scene(resource.getLayoutParent(layout))
-        }
+    fun setScene(controller: BaseController, scene: Scene?) {
+        controller.stage.scene = scene
+        setStyleSheet(null)
+        applyStyleSheet(controller, css)
     }
+
+    private fun applyStyleSheet(controller: BaseController, css: String) {
+        controller.stage
+                .scene
+                .stylesheets
+                .add(css)
+    }
+
+    abstract fun onSetUpView(resource: AppResource)
 
     fun getStage() = stage
 
-    abstract fun onSetUpView()
+    open fun setStyleSheet(css: String?) {
+        css?.let {
+            this.css = css
+        }
+    }
 }

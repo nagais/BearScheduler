@@ -22,11 +22,13 @@ abstract class BaseController : Application() {
         onSetUpView()
     }
 
-    fun setSense(layout: AppResource.Layout) {
+    fun setScene(layout: AppResource.Layout) {
         stage.apply {
             scene = Scene(resource.getLayoutParent(layout))
         }
     }
+
+    fun getStage() = stage
 
     abstract fun onSetUpView()
 }

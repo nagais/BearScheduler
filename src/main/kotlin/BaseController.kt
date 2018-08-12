@@ -19,7 +19,7 @@ abstract class BaseController : Application() {
         }
         primaryStage.show()
 
-        createView()
+        onSetUpView()
     }
 
     fun setSense(layout: AppResource.Layout) {
@@ -28,5 +28,5 @@ abstract class BaseController : Application() {
         }
     }
 
-    abstract fun createView()
+    abstract fun onSetUpView()
 }

@@ -2,7 +2,7 @@ import util.AppResource
 
 class TopController : BaseController() {
 
-    override fun createView() {
+    override fun onSetUpView() {
         setSense(AppResource.Layout.Top)
     }
 }

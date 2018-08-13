@@ -26,24 +26,9 @@ abstract class BaseController : Application() {
 
     fun setScene(controller: BaseController, scene: Scene?) {
         controller.stage.scene = scene
-        setStyleSheet(null)
-        applyStyleSheet(controller, css)
-    }
-
-    private fun applyStyleSheet(controller: BaseController, css: String) {
-        controller.stage
-                .scene
-                .stylesheets
-                .add(css)
     }
 
     abstract fun onSetUpView(resource: AppResource)
 
     fun getStage() = stage
-
-    open fun setStyleSheet(css: String?) {
-        css?.let {
-            this.css = css
-        }
-    }
 }

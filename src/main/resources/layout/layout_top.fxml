@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="TopController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="600.0"
+            stylesheets="@../css/top.css">
 
     <VBox>
+
         <Label id="appName"
+               prefWidth="600.0"
                text="Bear Scheduler"/>
+
+        <GridPane id="inputGridPane"
+                  vgap="10.0"
+                  hgap="10.0"
+                  prefWidth="600.0">
+
+            <Label id="mailAddress"
+                   GridPane.rowIndex="1"
+                   GridPane.columnIndex="0"
+                   text="mail address"/>
+
+            <TextField
+                    id="mailAddressField"
+                    GridPane.rowIndex="1"
+                    GridPane.columnIndex="1"/>
+
+            <Label id="password"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="0"
+                   text="password"/>
+
+            <PasswordField
+                    id="passwordField"
+                    GridPane.rowIndex="2"
+                    GridPane.columnIndex="1"/>
+
+            <Button text="Login"
+                    GridPane.rowIndex="3"
+                    GridPane.columnIndex="1"/>
+
+        </GridPane>
+
+        <FlowPane id="bottomImage" prefWidth="600.0">
+            <ImageView>
+                <Image url="@../images/icon.png"/>
+            </ImageView>
+        </FlowPane>
     </VBox>
 
 </AnchorPane>

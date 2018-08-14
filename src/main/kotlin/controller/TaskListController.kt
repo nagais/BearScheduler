@@ -1,6 +1,5 @@
 package controller
 
-import controller.BaseController
 import util.AppResource
 
 class TaskListController : BaseController() {

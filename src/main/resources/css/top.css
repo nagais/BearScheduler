@@ -31,3 +31,10 @@
 #bottomImage {
     -fx-alignment: center;
 }
+
+#validateErrorText {
+    -fx-text-fill: #ff0000;
+    -fx-font-weight: bold;
+    -fx-padding: 10px, 0, 0, 0;
+    -fx-alignment: center;
+}

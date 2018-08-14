@@ -28,6 +28,7 @@
 
             <TextField
                     id="mailAddressField"
+                    fx:id="mailAddressField"
                     GridPane.rowIndex="1"
                     GridPane.columnIndex="1"/>
 
@@ -38,6 +39,7 @@
 
             <PasswordField
                     id="passwordField"
+                    fx:id="passwordField"
                     GridPane.rowIndex="2"
                     GridPane.columnIndex="1"/>
 
@@ -47,6 +49,12 @@
                     GridPane.columnIndex="1"/>
 
         </GridPane>
+
+        <Label id="validateErrorText"
+               fx:id="validateErrorText"
+               prefWidth="600.0"
+               visible="false"
+               text="EmailAddress or Password is wrong"/>
 
         <FlowPane id="bottomImage" prefWidth="600.0">
             <ImageView>

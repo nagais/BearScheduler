@@ -11,9 +11,12 @@ object AppResource {
     const val IMAGE_RESOURCE_PATH = "../resources/images/"
     const val CSS_RESOURCE_PATH = "../resources/css/"
 
+    lateinit var loader:FXMLLoader
+
     fun getLayoutScene(layout: Layout): Scene {
         val path = LAYOUT_RESOURCE_PATH + layout.layoutPath
-        val parent = FXMLLoader.load<Parent>(javaClass.classLoader.getResource(path))
+        loader = FXMLLoader(javaClass.classLoader.getResource(path))
+        val parent = loader.load<Parent>()
         return Scene(parent)
     }
 

@@ -42,6 +42,7 @@
                     GridPane.columnIndex="1"/>
 
             <Button text="Login"
+                    onAction="#onClick"
                     GridPane.rowIndex="3"
                     GridPane.columnIndex="1"/>
 

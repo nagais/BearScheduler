@@ -1,34 +1,20 @@
-import javafx.application.Application
 import javafx.scene.Scene
 import javafx.stage.Stage
 import util.AppResource
+import util.ControllerInterface
+import util.RootController
 
-abstract class BaseController : Application() {
-    private val resource = AppResource.getResourceObject()
-    private lateinit var stage: Stage
-    private var css: String = ""
+abstract class BaseController : RootController(), ControllerInterface {
 
-    companion object {
-        const val APP_TITLE = "BearTree"
+    fun setScene(scene: Scene?) {
+        getStage().scene = scene
     }
 
-    override fun start(primaryStage: Stage?) {
-        stage = primaryStage!!
-        primaryStage.apply {
-            title = APP_TITLE
-            icons.add(resource.getImage(AppResource.Images.ICON))
-        }
-        primaryStage.show()
-
-        onSetUpView(this.resource)
-        setScene(this, stage.scene)
+    fun onNextView(controller: ControllerInterface) {
+        controller.onSetUpView(AppResource)
     }
 
-    fun setScene(controller: BaseController, scene: Scene?) {
-        controller.stage.scene = scene
+    override fun startBaseController(stage: Stage) {
+        onSetUpView(AppResource)
     }
-
-    abstract fun onSetUpView(resource: AppResource)
-
-    fun getStage() = stage
 }

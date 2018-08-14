@@ -11,17 +11,13 @@ object AppResource {
     const val IMAGE_RESOURCE_PATH = "../resources/images/"
     const val CSS_RESOURCE_PATH = "../resources/css/"
 
-    fun getResourceObject(): AppResource {
-        return this
-    }
-
-    fun getLayoutScene(layout: Layout) : Scene {
+    fun getLayoutScene(layout: Layout): Scene {
         val path = LAYOUT_RESOURCE_PATH + layout.layoutPath
         val parent = FXMLLoader.load<Parent>(javaClass.classLoader.getResource(path))
         return Scene(parent)
     }
 
-    fun getImage(image: Images) : Image {
+    fun getImage(image: Images): Image {
         val path = IMAGE_RESOURCE_PATH + image.imagePath
         return Image(javaClass.classLoader.getResourceAsStream(path))
     }
@@ -31,7 +27,8 @@ object AppResource {
     }
 
     enum class Layout(val layoutPath: String) {
-        TOP("layout_top.fxml")
+        TOP("layout_top.fxml"),
+        TASK_LIST("layout_task_list.fxml")
     }
 
     enum class Images(val imagePath: String) {

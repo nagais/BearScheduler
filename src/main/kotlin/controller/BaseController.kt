@@ -1,8 +1,9 @@
+package controller
+
 import javafx.scene.Scene
 import javafx.stage.Stage
 import util.AppResource
 import util.ControllerInterface
-import util.RootController
 
 abstract class BaseController : RootController(), ControllerInterface {
 

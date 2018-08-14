@@ -1,3 +1,5 @@
+package controller
+
 import javafx.stage.Stage
 
 object Manager {
@@ -7,7 +9,7 @@ object Manager {
     const val APP_TITLE = "BearScheduler"
 
     fun setStage(stage: Stage) {
-        this.stage = stage
+        Manager.stage = stage
     }
 
     fun getStage(): Stage {

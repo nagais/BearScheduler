@@ -13,7 +13,8 @@ interface ControllerInterface {
     fun initialize()
 
     /**
-     * Set up View
+     * This method set view.
+     * This method is called with initialize method called.
      */
     fun onSetUpView()
 }

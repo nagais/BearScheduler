@@ -10,19 +10,6 @@ import util.Validator
 
 class TopController : BaseController() {
 
-    companion object {
-        // reference : https://android.googlesource.com/platform/frameworks/base/+/81aa097/core/java/android/util/Patterns.java
-        const val EMAIL_PATTERN = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
-                "\\@" +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
-                "(" +
-                "\\." +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
-                ")+"
-
-        const val PASSWORD_PATTERN = "[a-zA-Z0-9;:@#$%!&]{8,}"
-    }
-
     @FXML
     private lateinit var validateErrorText: Label
 
@@ -32,7 +19,7 @@ class TopController : BaseController() {
     @FXML
     private lateinit var passwordField: PasswordField
 
-    override fun onSetUpView(resource: AppResource) {
+    override fun onSetScene(resource: AppResource) {
         setScene(resource.getLayoutScene(AppResource.Layout.TOP))
     }
 
@@ -48,5 +35,8 @@ class TopController : BaseController() {
 
         validateErrorText.isManaged = true
         validateErrorText.isVisible = true
+    }
+
+    override fun onSetUpView() {
     }
 }

@@ -12,10 +12,14 @@ abstract class BaseController : RootController(), ControllerInterface {
     }
 
     fun onNextView(controller: ControllerInterface) {
-        controller.onSetUpView(AppResource)
+        controller.onSetScene(AppResource)
     }
 
     override fun startBaseController(stage: Stage) {
-        onSetUpView(AppResource)
+        onSetScene(AppResource)
+    }
+
+    override fun initialize() {
+        onSetUpView()
     }
 }

@@ -6,6 +6,7 @@ import javafx.scene.control.Label
 import javafx.scene.control.PasswordField
 import javafx.scene.control.TextField
 import util.AppResource
+import util.Validator
 
 class TopController : BaseController() {
 
@@ -40,23 +41,12 @@ class TopController : BaseController() {
         val address = mailAddressField.text
         val password = passwordField.text
 
-        if (addressValidate(address) && passwordValidate(password)) {
+        if (Validator.addressValidate(address) && Validator.passwordValidate(password)) {
             onNextView(TaskListController())
             return
         }
 
         validateErrorText.isManaged = true
         validateErrorText.isVisible = true
-    }
-
-    private fun addressValidate(address: String): Boolean {
-        val emailRegex = EMAIL_PATTERN.toRegex()
-        return emailRegex.matches(address)
-    }
-
-    // reference : https://stackoverflow.com/questions/49519739/password-regex-not-working-in-kotlin
-    private fun passwordValidate(password: String): Boolean {
-        val passwordRegex = PASSWORD_PATTERN.toRegex()
-        return passwordRegex.matches(password)
     }
 }

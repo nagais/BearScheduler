@@ -1,6 +1,5 @@
 package controller
 
-import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.control.PasswordField
@@ -24,17 +23,19 @@ class TopController : BaseController() {
     }
 
     @FXML
-    fun onClick(actionEvent: ActionEvent) {
+    fun onClick() {
         val address = mailAddressField.text
         val password = passwordField.text
 
-        if (Validator.addressValidate(address) && Validator.passwordValidate(password)) {
-            onNextView(TaskListController())
-            return
-        }
+        // バリデーション機能を開発用にコメントアウト
 
-        validateErrorText.isManaged = true
-        validateErrorText.isVisible = true
+//        if (Validator.addressValidate(address) && Validator.passwordValidate(password)) {
+            onNextView(TaskListController())
+//            return
+//        }
+//
+//        validateErrorText.isManaged = true
+//        validateErrorText.isVisible = true
     }
 
     override fun onSetUpView() {

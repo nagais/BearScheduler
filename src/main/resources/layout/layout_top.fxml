@@ -41,11 +41,13 @@
                     id="passwordField"
                     fx:id="passwordField"
                     GridPane.rowIndex="2"
+                    onKeyPressed="#onPasswordFieldKeyPressed"
                     GridPane.columnIndex="1"/>
 
             <Button text="Login"
                     onAction="#onClick"
                     GridPane.rowIndex="3"
+                    onKeyPressed="#onButtonKeyPressed"
                     GridPane.columnIndex="1"/>
 
         </GridPane>

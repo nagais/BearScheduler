@@ -4,8 +4,9 @@ import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.control.PasswordField
 import javafx.scene.control.TextField
+import javafx.scene.input.KeyCode
+import javafx.scene.input.KeyEvent
 import util.AppResource
-import util.Validator
 
 class TopController : BaseController() {
 
@@ -30,7 +31,7 @@ class TopController : BaseController() {
         // バリデーション機能を開発用にコメントアウト
 
 //        if (Validator.addressValidate(address) && Validator.passwordValidate(password)) {
-            onNextView(TaskListController())
+        onNextView(TaskListController())
 //            return
 //        }
 //
@@ -39,5 +40,19 @@ class TopController : BaseController() {
     }
 
     override fun onSetUpView() {
+    }
+
+    @FXML
+    fun onPasswordFieldKeyPressed(event: KeyEvent) {
+        if (event.code == KeyCode.ENTER) {
+            onClick()
+        }
+    }
+
+    @FXML
+    fun onButtonKeyPressed(event: KeyEvent) {
+        if (event.code == KeyCode.ENTER) {
+            onClick()
+        }
     }
 }

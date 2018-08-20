@@ -1,0 +1,51 @@
+#panel {
+    /*背景画像に利用している画像*/
+    /*https://www.pakutaso.com/20180755201post-16856.html*/
+    -fx-background-image: url(../images/forest.jpg);
+    -fx-background-size: 800 500;
+    -fx-background-repeat: stretch;
+}
+
+.tab-pane .tab-header-area .tab-header-background{
+    -fx-background-color: transparent;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #ffffff;
+}
+
+.tab-content-area {
+    -fx-background-color: #3c3c3c;
+}
+
+/*reference : https://stackoverflow.com/questions/36779642/javafx-css-styling-change-highlight-color-of-selected-tabs*/
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent
+}

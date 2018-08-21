@@ -21,12 +21,12 @@
 
 .tab-pane .tab
 {
-    -fx-background-color: #e6e6e6;
+    -fx-background-color: #e6e6e6aa;
 }
 
 .tab-pane .tab:selected
 {
-    -fx-background-color: #3c3c3c;
+    -fx-background-color: #3c3c3caa;
 }
 
 .tab .tab-label {
@@ -42,7 +42,7 @@
 }
 
 .tab-content-area {
-    -fx-background-color: #3c3c3c;
+    -fx-background-color: #3c3c3caa;
 }
 
 /*reference : https://stackoverflow.com/questions/36779642/javafx-css-styling-change-highlight-color-of-selected-tabs*/

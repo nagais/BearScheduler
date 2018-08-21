@@ -1,5 +1,7 @@
 package controller
 
+import javafx.collections.FXCollections
+import javafx.collections.ObservableList
 import javafx.fxml.FXML
 import javafx.scene.control.Tab
 import javafx.scene.control.TabPane
@@ -12,13 +14,16 @@ class TaskListController : BaseController() {
         private const val ADD = "+"
     }
 
+    private val tabList: ObservableList<Tab> = FXCollections.observableArrayList()
+
     @FXML
     private lateinit var tabPane: TabPane
 
     override fun onSetUpView() {
         val tabAll = createTab(ALL)
         val tabAdd = createTab(ADD)
-        tabPane.tabs.addAll(tabAll, tabAdd)
+        tabList.addAll(tabAll, tabAdd)
+        tabPane.tabs.addAll(tabList)
     }
 
     private fun createTab(tabName: String) : Tab {

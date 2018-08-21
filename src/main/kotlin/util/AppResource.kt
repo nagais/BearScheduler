@@ -1,6 +1,7 @@
 package util
 
 import javafx.fxml.FXMLLoader
+import javafx.scene.Node
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.scene.image.Image
@@ -20,6 +21,12 @@ object AppResource {
         return Scene(parent)
     }
 
+    fun getLayoutParent(layout: Layout): Node {
+        val path = LAYOUT_RESOURCE_PATH + layout.layoutPath
+        loader = FXMLLoader(javaClass.classLoader.getResource(path))
+        return loader.load<Node>()
+    }
+
     fun getImage(image: Images): Image {
         val path = IMAGE_RESOURCE_PATH + image.imagePath
         return Image(javaClass.classLoader.getResourceAsStream(path))
@@ -31,7 +38,8 @@ object AppResource {
 
     enum class Layout(val layoutPath: String) {
         TOP("layout_top.fxml"),
-        TASK_LIST("layout_task_list.fxml")
+        TASK_LIST("layout_task_list.fxml"),
+        TAB_CONTENT("layout_task_tab.fxml")
     }
 
     enum class Images(val imagePath: String) {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            fx:controller="controller.TabController"
+            stylesheets="@../css/task_tab.css"
+            id="tabAnchorPane"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <ListView fx:id="listView"
+              id="listView"
+              prefWidth="800"
+              prefHeight="467"/>
+
+</AnchorPane>

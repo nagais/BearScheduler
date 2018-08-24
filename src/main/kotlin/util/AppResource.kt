@@ -38,7 +38,8 @@ object AppResource {
     enum class Layout(val layoutPath: String) {
         TOP("layout_top.fxml"),
         TASK_LIST("layout_task_list.fxml"),
-        TAB_CONTENT("layout_task_tab.fxml")
+        TAB_CONTENT("layout_task_tab.fxml"),
+        TASK_CELL("layout_task_cell.fxml")
     }
 
     enum class Images(val imagePath: String) {

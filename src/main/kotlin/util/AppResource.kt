@@ -21,10 +21,9 @@ object AppResource {
         return Scene(parent)
     }
 
-    fun getLayoutParent(layout: Layout): Node {
+    fun getLayoutLoader(layout: Layout): FXMLLoader {
         val path = LAYOUT_RESOURCE_PATH + layout.layoutPath
-        loader = FXMLLoader(javaClass.classLoader.getResource(path))
-        return loader.load<Node>()
+        return FXMLLoader(javaClass.classLoader.getResource(path))
     }
 
     fun getImage(image: Images): Image {

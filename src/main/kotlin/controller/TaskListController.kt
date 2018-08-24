@@ -3,6 +3,7 @@ package controller
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
 import javafx.fxml.FXML
+import javafx.scene.Parent
 import javafx.scene.control.Tab
 import javafx.scene.control.TabPane
 import util.AppResource
@@ -30,7 +31,8 @@ class TaskListController : BaseController() {
         return Tab().apply {
             this.text = tabName
             this.isClosable = false
-            this.content = AppResource.getLayoutParent(AppResource.Layout.TAB_CONTENT)
+            val loader = AppResource.getLayoutLoader(AppResource.Layout.TAB_CONTENT)
+            this.content = loader.load<Parent>()
         }
     }
 

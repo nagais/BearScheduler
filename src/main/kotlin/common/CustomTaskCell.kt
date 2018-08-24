@@ -21,6 +21,7 @@ class CustomTaskCell : ListCell<String>() {
         loader.load<Node>()
     }
 
+    // reference : http://www.takaiwa.net/2014/04/javafxlistviewrowfxml.html
     override fun updateItem(item: String?, empty: Boolean) {
         super.updateItem(item, empty)
         if (empty) {

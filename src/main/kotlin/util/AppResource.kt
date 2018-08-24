@@ -21,10 +21,9 @@ object AppResource {
         return Scene(parent)
     }
 
-    fun getLayoutParent(layout: Layout): Node {
+    fun getLayoutLoader(layout: Layout): FXMLLoader {
         val path = LAYOUT_RESOURCE_PATH + layout.layoutPath
-        loader = FXMLLoader(javaClass.classLoader.getResource(path))
-        return loader.load<Node>()
+        return FXMLLoader(javaClass.classLoader.getResource(path))
     }
 
     fun getImage(image: Images): Image {
@@ -39,7 +38,8 @@ object AppResource {
     enum class Layout(val layoutPath: String) {
         TOP("layout_top.fxml"),
         TASK_LIST("layout_task_list.fxml"),
-        TAB_CONTENT("layout_task_tab.fxml")
+        TAB_CONTENT("layout_task_tab.fxml"),
+        TASK_CELL("layout_task_cell.fxml")
     }
 
     enum class Images(val imagePath: String) {

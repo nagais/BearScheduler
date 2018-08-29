@@ -4,7 +4,7 @@ class Validator {
 
     companion object {
         // reference : https://android.googlesource.com/platform/frameworks/base/+/81aa097/core/java/android/util/Patterns.java
-        const val EMAIL_PATTERN = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+        private const val EMAIL_PATTERN = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                 "\\@" +
                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
                 "(" +
@@ -12,7 +12,7 @@ class Validator {
                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
                 ")+"
 
-        const val PASSWORD_PATTERN = "[a-zA-Z0-9;:@#$%!&]{8,}"
+        private const val PASSWORD_PATTERN = "[a-zA-Z0-9;:@#$%!&]{8,}"
 
         fun addressValidate(address: String): Boolean {
             val emailRegex = EMAIL_PATTERN.toRegex()

@@ -7,6 +7,7 @@ import javafx.scene.control.TextField
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyEvent
 import util.AppResource
+import util.Validator
 
 class TopController : BaseController() {
 
@@ -28,15 +29,12 @@ class TopController : BaseController() {
         val address = mailAddressField.text
         val password = passwordField.text
 
-        // バリデーション機能を開発用にコメントアウト
-
-//        if (Validator.addressValidate(address) && Validator.passwordValidate(password)) {
+        if (Validator.addressValidate(address) && Validator.passwordValidate(password)) {
         onNextView(TaskListController())
-//            return
-//        }
-//
-//        validateErrorText.isManaged = true
-//        validateErrorText.isVisible = true
+            return
+        }
+        validateErrorText.isManaged = true
+        validateErrorText.isVisible = true
     }
 
     override fun onSetUpView() {

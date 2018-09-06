@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane id="tabAnchorPane" stylesheets="@../css/task_tab.css" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TabController">
+<?import javafx.scene.layout.VBox?>
+<AnchorPane id="tabAnchorPane"
+            stylesheets="@../css/task_tab.css"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.TabController">
 
-    <TextField id="textField" fx:id="textField" onKeyPressed="#onKeyPress" prefHeight="20" prefWidth="800"/>
+    <VBox>
 
-    <ListView id="listView" fx:id="listView" layoutY="27.0" prefHeight="440" prefWidth="800">
-        <opaqueInsets>
-            <Insets/>
-        </opaqueInsets>
-    </ListView>
+        <TextField id="textField"
+                   fx:id="textField"
+                   onKeyPressed="#onKeyPress"
+                   prefHeight="20"
+                   prefWidth="800"/>
+
+        <ListView id="listView"
+                  fx:id="listView"
+                  layoutY="27.0"
+                  prefHeight="440"
+                  prefWidth="800"/>
+
+    </VBox>
 
 </AnchorPane>
